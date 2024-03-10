@@ -1,9 +1,9 @@
-import axios from "axios"
-import { useState, useEffect } from "react"
-import { Link, useParams } from "react-router-dom"
-import { Row, Col, Image, ListGroup, Button, Card } from "react-bootstrap"
+import axios from 'axios'
+import { useState, useEffect } from 'react'
+import { Link, useParams } from 'react-router-dom'
+import { Row, Col, Image, ListGroup, Button, Card } from 'react-bootstrap'
 
-import Rating from "../components/Rating"
+import Rating from '../components/Rating'
 
 const ProductScreen = () => {
   const params = useParams()
@@ -17,7 +17,7 @@ const ProductScreen = () => {
     }
 
     fetchProduct()
-  }, [])
+  }, [params.id])
 
   return (
     <div>
@@ -38,8 +38,8 @@ const ProductScreen = () => {
             <ListGroup.Item>
               <Rating
                 value={product.rating}
-                text={`${product.numReviews} ratings`}
-                color={"#f8e825"}
+                text={`${product.num_reviews} ratings`}
+                color={'#f8e825'}
               />
             </ListGroup.Item>
 
@@ -64,12 +64,12 @@ const ProductScreen = () => {
               <ListGroup.Item>
                 <Row>
                   <Col>Status:</Col>
-                  <Col>{product.countInStock > 0 ? "In Stock" : "Out of Stock"}</Col>
+                  <Col>{product.count_in_stock > 0 ? 'In Stock' : 'Out of Stock'}</Col>
                 </Row>
               </ListGroup.Item>
 
               <ListGroup.Item>
-                <Button className="btn-block" disabled={product.countInStock === 0} type="button">
+                <Button className="btn-block" disabled={product.count_in_stock === 0} type="button">
                   Add to Cart
                 </Button>
               </ListGroup.Item>

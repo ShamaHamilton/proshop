@@ -1,7 +1,7 @@
-import { Card } from "react-bootstrap"
-import { Link } from "react-router-dom"
+import { Card } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 
-import Rating from "./Rating"
+import Rating from './Rating'
 
 const Product = ({ product }) => {
   return (
@@ -21,8 +21,8 @@ const Product = ({ product }) => {
           <div className="my-3">
             <Rating
               value={product.rating}
-              text={`${product.numReviews} reviews`}
-              color={"#f8e825"}
+              text={`${product.num_reviews} reviews`}
+              color={'#f8e825'}
             />
           </div>
         </Card.Text>
