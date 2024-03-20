@@ -6,7 +6,7 @@ import { Row, Col, ListGroup, Image, Form, Button, Card } from 'react-bootstrap'
 import Message from '../components/Message'
 import { addToCart, removeFromCart } from '../actions/cartActions'
 
-const CartScreen = ({ history }) => {
+const CartScreen = () => {
   const params = useParams()
   const location = useLocation()
   const navigate = useNavigate()
@@ -30,7 +30,8 @@ const CartScreen = ({ history }) => {
   }
 
   const checkoutHandler = () => {
-    navigate('/login?redirect=shipping')
+    // navigate('/login?redirect=shipping')
+    navigate('/shipping')
   }
 
   return (
